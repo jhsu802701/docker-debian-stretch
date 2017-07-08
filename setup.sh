@@ -86,6 +86,12 @@ do
   fill_in_params $FILE
 done
 
+# Provide the timestamp when running the info.sh script
+echo '' >> $ABBREV/shared/info.sh
+echo "echo '------------------------------'" >> $ABBREV/shared/info.sh
+echo "echo 'cat /home/winner/timestamp.txt'" >> $ABBREV/shared/info.sh
+echo 'cat /home/winner/timestamp.txt' >> $ABBREV/shared/info.sh
+
 # Provide port numbers in shared/ports.txt file
 # Provide port numbers when running the info.sh script
 # Provide port numbers in copy_new.sh
