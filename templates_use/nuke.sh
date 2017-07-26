@@ -1,16 +1,11 @@
 #!/bin/bash
 
-# This script removes all Docker containers and images.
+# This script destroys all Docker containers and images.
+# SOURCE: https://gist.github.com/JeffBelback/5687bb02f3618965ca8f
 
-all_c=$(docker ps -aq)
-docker rm $all_c
-all_i=$(docker images -aq)
-docker rmi $all_i
-
-echo '----------------'
-echo 'docker images -a'
-docker images -a
-
-echo '------------'
-echo 'docker ps -a'
-docker ps -a
+# Stop all containers
+docker stop $(docker ps -a -q)
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)
