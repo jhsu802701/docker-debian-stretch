@@ -15,16 +15,8 @@ echo '------------'
 echo 'docker ps -a'
 docker ps -a
 
-echo '-------------------------------------------------'
-echo "Removing images ($DOCKER_IMAGE: tag = $CONTAINER)"
-for i in $(docker images -a | grep "$DOCKER_IMAGE" | grep "$CONTAINER" | awk '{print $3}')
-do
-  docker kill $i; wait;
-  docker rmi $i; wait;
-done;
-
-echo '----------------'
-echo 'docker images -a'
-docker images -a
+echo '-------------------------------------'
+echo "docker images -a | grep $DOCKER_IMAGE"
+docker images -a | grep $DOCKER_IMAGE
 
 sh copy_new.sh $DOCKER_IMAGE
