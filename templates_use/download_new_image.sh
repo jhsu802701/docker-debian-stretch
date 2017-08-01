@@ -16,8 +16,6 @@ echo
 echo 'Press Enter to continue.'
 read -p '************************' continue
 
-sh remove_containers.sh $DOCKER_IMAGE
 sh remove_image.sh $DOCKER_IMAGE
-sh remove_dangling.sh
-sh remove_none.sh
+
 sh copy_new.sh $DOCKER_IMAGE
