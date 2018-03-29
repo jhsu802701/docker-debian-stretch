@@ -9,8 +9,7 @@ cat /home/winner/shared/ports.txt
 echo '**********************'
 echo 'OPEN YOUR WEB BROWSER.'
 echo 'GO TO THE FOLLOWING URL:'
-echo 'http://<IP Address>:4000'
-echo "If Docker is installed directly in your host OS, use the IP address 'localhost'."
-echo "If you are using Docker Machine, use Docker Machine's dedicated IP address (probably 192.168.99.100)."
-echo '*************************************************************************'
+echo 'http://localhost:4000'
+echo 'If you are using Docker or Vagrant, the port number may be different'
+echo '********************************************************************'
 cd my-awesome-site && jekyll serve --host 0.0.0.0
