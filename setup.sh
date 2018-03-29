@@ -57,7 +57,7 @@ then
   cp templates_shared/test-jekyll.sh $ABBREV/shared
   cp templates_shared/test-jekyll.sh $ABBREV/shared
   cp templates_shared/create-jekyll.sh $ABBREV/shared
-elif [[ "$ABBREV" =~ "rbenv" ]]
+elif [[ "$ABBREV" =~ 'rbenv' ]]
 then
   cp templates_shared/info-dev.sh $ABBREV/shared
   cp templates_shared/info-rbenv-general.sh $ABBREV/shared/info.sh
@@ -65,6 +65,14 @@ then
   cp templates_shared/pg-setup.sh $ABBREV/shared
   cp templates_shared/test-rails-sq.sh $ABBREV/shared
   cp templates_shared/test-rails-pg.sh $ABBREV/shared
+elif [[ "$ABBREV" =~ 'jekyll' ]]
+then
+  cp templates_shared/info-dev.sh $ABBREV/shared
+  cp templates_shared/info-jekyll-general.sh $ABBREV/shared/info.sh
+  cp templates_shared/pg-reset.sh $ABBREV/shared
+  cp templates_shared/pg-setup.sh $ABBREV/shared
+  cp templates_shared/test-jekyll.sh $ABBREV/shared
+  cp templates_shared/create-jekyll.sh $ABBREV/shared
 fi
 
 # Fill in DOCKER_IMAGE and CONTAINER parameters
