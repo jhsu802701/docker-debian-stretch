@@ -17,28 +17,17 @@ Welcome to my repository for using my 32-bit and 64-bit Docker images based on D
 * If you have not already done so, please install Docker.  For 64-bit Docker, use Docker's official instructions.  For 32-bit Docker, follow the instructions at https://github.com/jhsu802701/docker-32bit-debian-stretch-install to install Docker.
 
 ### Editions available
-* Minimal (min): This consists of the basic features provided by the debootstrap command plus Sudo, Nano, tmux, and a regular user named "winner".
-* Developer (dev): This is the Minimal Editon plus Git, Heroku Toolbelt, Ansible, Chef, Puppet, NVM, Node, and rbenv.  This is a building block for the rbenv-* editions.
-* Jekyll rbenv (rbenv-jekyll): This is the Jekyll Docker image for creating static web sites.  It comes with rbenv, the latest version of Ruby, and the latest version of the Jekyll gem.
-* General rbenv (rbenv-general): This is a general purpose Docker image for using Ruby on Rails.  It comes with the latest versions of Ruby and Rails plus the versions of Rails used in the last few versions of the Rails Tutorial Sample App.
-* RubyMn rbenv (rbenv-rubymn): This includes the versions of Ruby and Rails used by https://github.com/rubymn/ruby.mn-website .
-* RubyMn2 rbenv (rbenv-rubymn2): This includes the versions of Ruby and Rails used by https://github.com/jhsu802701/ruby_mn_site .
-* RubyGems rbenv (rbenv-rubygems): This includes the versions of Ruby on Rails used by https://github.com/rubygems/rubygems.org .  Due to this project's reliance on software that is only available for 32-bit systems, ONLY the 64-bit version of this Docker image is available.
-* LoseMoneyFast rbenv (rbenv-losemoneyfast): This includes the versions of Ruby on Rails used by https://github.com/jhsu802701/losemoneyfast .
+* Rails RubyMn (rails-rubymn1): This includes the versions of Ruby and Rails used by https://github.com/rubymn/ruby.mn-website .
+* Rails RubyMn2 (rails-rubymn2): This includes the versions of Ruby and Rails used by https://github.com/jhsu802701/ruby_mn_site .
 
 ### Scripts For Using Images
 Just enter sh (script name) to proceed.
 
 | Docker image        | Script for Using 32-bit Image | Script for Using 64-bit Image |
 |---------------------|-------------------------------|-------------------------------|
-| min                 |32min.sh                       | min.sh                        |
-| dev                 |32dev.sh                       | dev.sh                        |
-| rbenv-jekyll        |32rbenv-jekyll.sh              | rbenv-jekyll.sh
-| rbenv-general       |32rbenv-general.sh             | rbenv-general.sh              |
-| rbenv-rubymn        |32rbenv-rubymn.sh              | rbenv-rubymn.sh               |
-| rbenv-rubymn2       |32rbenv-rubymn2.sh             | rbenv-rubymn2.sh              |
-| rbenv-rubygems      |N/A                            | rbenv-rubygems.sh             |
-| rbenv-losemoneyfast |32rbenv-losemoneyfast.sh       | rbenv-losemoneyfast.sh        |
+| rails-rubymn1       |32rails-rubymn1.sh             | rails-rubymn1.sh              |
+| rails-rubymn2       |32rails-rubymn2.sh             | rails-rubymn2.sh              |
+| rails-sessionizer   |32rails-sessionizer.sh         | rails-sessionizer.sh          |
 
 ## Building Docker Images
 * 32-bit: https://github.com/jhsu802701/docker-32bit-debian-stretch-build

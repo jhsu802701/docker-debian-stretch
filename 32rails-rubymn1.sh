@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ABBREV='rbenv-rubymn2'
+ABBREV='rails-rubymn1'
 OWNER='jhsu802701'
 DISTRO='debian'
 SUITE='stretch'

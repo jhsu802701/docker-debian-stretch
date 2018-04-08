@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ABBREV='rbenv-rubygems'
+ABBREV='rails-rubymn2'
 OWNER='jhsu802701'
 DISTRO='debian'
 SUITE='stretch'

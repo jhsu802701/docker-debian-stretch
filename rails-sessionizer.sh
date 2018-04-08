@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ABBREV='rbenv-general'
+ABBREV='rails-sessionizer'
 OWNER='jhsu802701'
 DISTRO='debian'
 SUITE='stretch'

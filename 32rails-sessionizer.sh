@@ -1,12 +1,12 @@
 #!/bin/bash
 
-ABBREV='rbenv-losemoneyfast'
+ABBREV='rails-sessionizer'
 OWNER='jhsu802701'
 DISTRO='debian'
 SUITE='stretch'
-DOCKER_IMAGE="$OWNER/$DISTRO-$SUITE-$ABBREV"
-CONTAINER="container-$DISTRO-$SUITE-$ABBREV"
-TGZ_FILE="$DISTRO-$SUITE-$ABBREV.tgz"
+DOCKER_IMAGE="$OWNER/32bit-$DISTRO-$SUITE-$ABBREV"
+CONTAINER="container-32bit-$DISTRO-$SUITE-$ABBREV"
+TGZ_FILE="32bit-$DISTRO-$SUITE-$ABBREV.tgz"
 
 echo 'By default, your host port numbers are:'
 echo '  MailCatcher: 1080'

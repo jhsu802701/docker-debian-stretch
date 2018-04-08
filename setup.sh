@@ -39,40 +39,18 @@ mkdir -p $ABBREV/shared
 cp $TGZ_FILE $ABBREV/$TGZ_FILE > /dev/null 2>&1
 cp templates_use/* $ABBREV
 
-cp templates_shared/info-min.sh $ABBREV/shared # For all Docker images
+cp templates_shared/info.sh $ABBREV/shared # For all Docker images
 cp templates_shared/README-host.txt $ABBREV/shared # For all Docker images
 # For specific Docker images
-if [ $ABBREV = 'min' ]
+if [[ "$ABBREV" =~ 'rails' ]]
 then
-  mv $ABBREV/shared/info-min.sh $ABBREV/shared/info.sh
-elif [ $ABBREV = 'dev' ]
-then
-  cp templates_shared/info-dev.sh $ABBREV/shared/info.sh
-elif [ $ABBREV = 'rbenv-jekyll' ]
-then
-  cp templates_shared/info-dev.sh $ABBREV/shared
-  cp templates_shared/info-rbenv-jekyll.sh $ABBREV/shared/info.sh
-  cp templates_shared/pg-reset.sh $ABBREV/shared
-  cp templates_shared/pg-setup.sh $ABBREV/shared
-  cp templates_shared/test-jekyll.sh $ABBREV/shared
-  cp templates_shared/test-jekyll.sh $ABBREV/shared
-  cp templates_shared/create-jekyll.sh $ABBREV/shared
-elif [[ "$ABBREV" =~ 'rbenv' ]]
-then
-  cp templates_shared/info-dev.sh $ABBREV/shared
-  cp templates_shared/info-rbenv-general.sh $ABBREV/shared/info.sh
   cp templates_shared/pg-reset.sh $ABBREV/shared
   cp templates_shared/pg-setup.sh $ABBREV/shared
   cp templates_shared/test-rails-sq.sh $ABBREV/shared
   cp templates_shared/test-rails-pg.sh $ABBREV/shared
 elif [[ "$ABBREV" =~ 'jekyll' ]]
 then
-  cp templates_shared/info-dev.sh $ABBREV/shared
-  cp templates_shared/info-jekyll-general.sh $ABBREV/shared/info.sh
-  cp templates_shared/pg-reset.sh $ABBREV/shared
-  cp templates_shared/pg-setup.sh $ABBREV/shared
   cp templates_shared/test-jekyll.sh $ABBREV/shared
-  cp templates_shared/create-jekyll.sh $ABBREV/shared
 fi
 
 # Fill in DOCKER_IMAGE and CONTAINER parameters
@@ -81,6 +59,7 @@ fill_in_params () {
   # NOTE: Using \ instead of / as delimiter in sed command
   sed -i.bak "s|<DOCKER_IMAGE>|$DOCKER_IMAGE|g" $FILE_TO_UPDATE
   sed -i.bak "s|<CONTAINER>|$CONTAINER|g" $FILE_TO_UPDATE
+  sed -i.bak "s|<ABBREV>|$ABBREV|g" $FILE_TO_UPDATE
   rm $FILE_TO_UPDATE.bak
 }
 
@@ -94,17 +73,8 @@ do
   fill_in_params $FILE
 done
 
-# Provide the timestamp when running the info.sh script
-echo '' >> $ABBREV/shared/info.sh
-echo "echo '------------------------------'" >> $ABBREV/shared/info.sh
-echo "echo 'cat /home/winner/timestamp.txt'" >> $ABBREV/shared/info.sh
-echo 'cat /home/winner/timestamp.txt' >> $ABBREV/shared/info.sh
-
 # Provide port numbers in shared/ports.txt file
-# Provide port numbers when running the info.sh script
 # Provide port numbers in copy_new.sh
-echo '' >> $ABBREV/shared/info.sh
-echo 'cat ports.txt' >> $ABBREV/shared/info.sh
 echo '--------------------------------' > $ABBREV/shared/ports.txt
 echo 'PORT FORWARDING (Host -> Docker)' >> $ABBREV/shared/ports.txt
 
