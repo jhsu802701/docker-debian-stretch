@@ -1,4 +1,4 @@
-# docker-debian-stretch
+# Docker Debian Stretch
 Welcome to my repository for using my 32-bit and 64-bit Docker images based on Debian Stretch.  These Docker images are stored on [Docker Hub](https://hub.docker.com/r/jhsu802701/).
 
 ## Incompatibility Warnings
@@ -14,21 +14,19 @@ Welcome to my repository for using my 32-bit and 64-bit Docker images based on D
 
 ## Prerequisites
 * If you have not already done so, please install Git.
-* If you have not already done so, please install Docker.  For 64-bit Docker, use Docker's official instructions.  For 32-bit Docker, follow the instructions at https://github.com/jhsu802701/docker-32bit-debian-stretch-install to install Docker.
+* If you have not already done so, please install Docker.  See the [Docker Tutorial](https://github.com/rubyonracetracks/tutorial-docker-stretch) for more details on how to do this.
 
 ### Editions available
-* Rails RubyMn (rails-rubymn1): This includes the versions of Ruby and Rails used by https://github.com/rubymn/ruby.mn-website .
-* Rails RubyMn2 (rails-rubymn2): This includes the versions of Ruby and Rails used by https://github.com/jhsu802701/ruby_mn_site .
+* Rails RubyMn2 (rails-rubymn2): This includes the versions of Ruby and Rails used by https://github.com/jhsu802701/rubymn2 .
+* Rails Sessionizer (rails-sessionizer): This includes the versions of Ruby and Rails used by https://github.com/minnestar/sessionizer .
 
 ### Scripts For Using Images
 Just enter sh (script name) to proceed.
 
 | Docker image        | Script for Using 32-bit Image | Script for Using 64-bit Image |
 |---------------------|-------------------------------|-------------------------------|
-| rails-rubymn1       |32rails-rubymn1.sh             | rails-rubymn1.sh              |
 | rails-rubymn2       |32rails-rubymn2.sh             | rails-rubymn2.sh              |
 | rails-sessionizer   |32rails-sessionizer.sh         | rails-sessionizer.sh          |
 
 ## Building Docker Images
-* 32-bit: https://github.com/jhsu802701/docker-32bit-debian-stretch-build
-* 64-bit: https://github.com/jhsu802701/docker-64bit-debian-stretch-build
+https://github.com/jhsu802701/docker-debian-stretch-build
